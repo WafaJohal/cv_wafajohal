@@ -25,8 +25,15 @@
 \usepackage{tabularx}
 
 % --- Hyperlinks ---
-\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=black]{hyperref}
+\usepackage[hidelinks]{hyperref}
 
+\hypersetup{
+    colorlinks=true,       % Enable colored text instead of boxes
+    linkcolor=DarkerBlue,        % Color for internal links
+    citecolor=DarkerBlue,        % Color for citations
+    filecolor=DarkerBlue,        % Color for file links
+    urlcolor=DarkerBlue          % Color for external URLs
+}
 % --- Lists ---
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=2pt, partopsep=0pt}
