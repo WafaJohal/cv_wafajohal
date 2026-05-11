@@ -1,6 +1,23 @@
+%\usepackage{xcolor-material}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+    colorlinks=true,       % Enable colored text instead of boxes
+    linkcolor=DarkerBlue,        % Color for internal links
+    citecolor=DarkerBlue,        % Color for citations
+    filecolor=DarkerBlue,        % Color for file links
+    urlcolor=DarkerBlue          % Color for external URLs
+}
+
+\definecolor{LightGray}{RGB}{230,232,235} % this 
+\definecolor{LightBlue}{RGB}{214,232,253} % this
+\definecolor{DarkerBlue}{RGB}{50,60,115}
+
+
+
 % Define a macro to combine section number and title with background color
 \newcommand{\subsectionformat}[1]{%
-  \colorbox{LightBlue!40}{\parbox{\dimexpr\textwidth-2\fboxsep}{#1}}%
+  \colorbox{LightBlue!100}{\parbox{\dimexpr\textwidth-2\fboxsep}{#1}}%
 }
 
 % Apply the macro in \titleformat without using # directly
@@ -20,7 +37,7 @@
 \sectionnumberedtrue % default: show number
 
 \newcommand{\sectionformat}[1]{%
-  \colorbox{LightBlue!90}{%
+  \colorbox{LightBlue!100}{%
     \parbox{\dimexpr\textwidth-2\fboxsep}{%
       \ifsectionnumbered
         \thesection\ #1%
