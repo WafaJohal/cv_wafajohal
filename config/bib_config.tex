@@ -1,0 +1,48 @@
+%%%%%%%%   BIB
+\usepackage[firstinits=true,backend=bibtex,doi=false,isbn=false,url=false,maxbibnames=99]{biblatex}
+\AtEveryBibitem{%
+  \clearfield{pages}%
+}
+\renewcommand{\bibfont}{\normalfont\footnotesize}
+\addbibresource{bib/references.bib}
+
+\defbibenvironment{bibliography}
+  {\noindent}
+  {\unspace}
+  {\printtext[bold]{%
+     \printtext[labelnumberwidth]{%
+       \printfield{labelprefix}%
+       \printfield{labelnumber}}}%
+   \addspace}
+\renewbibmacro*{finentry}{\finentry\quad}
+
+\def\makenamesetup{%
+  \def\bibnamedelima{~}%
+  \def\bibnamedelimb{ }%
+  \def\bibnamedelimc{ }%
+  \def\bibnamedelimd{ }%
+  \def\bibnamedelimi{ }%
+  \def\bibinitperiod{.}%
+  \def\bibinitdelim{~}%
+  \def\bibinithyphendelim{.-}}
+\newcommand*{\makename}[2]{\begingroup\makenamesetup\xdef#1{#2}\endgroup}
+
+\newcommand*{\boldname}[3]{%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}}
+\boldname{}{}{}
+
+% Patch new definitions
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+
+\boldname{Johal}{Wafa}{W.}

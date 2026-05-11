@@ -1,0 +1,130 @@
+% ============================================================
+% cv_full.tex — Full CV, no page limit
+% Compile with: lualatex cv_full.tex
+% (LuaLaTeX or XeLaTeX required for Carlito font)
+% ============================================================
+
+\documentclass[a4paper, 11pt]{article}
+
+% --- Geometry ---
+\usepackage[a4paper, top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
+
+% --- Font (Carlito requires LuaLaTeX or XeLaTeX) ---
+\usepackage{fontspec}
+\setmainfont{Carlito}
+
+% --- Colour (x11names provides LightBlue used in section_config) ---
+\usepackage[x11names]{xcolor}
+
+% --- Section formatting (loads subsection/section macros) ---
+\usepackage{titlesec}
+\input{config/section_config}
+
+% --- Tables ---
+\usepackage{tabularx}
+
+% --- Hyperlinks ---
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=black]{hyperref}
+
+% --- Lists ---
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=3pt, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=3pt, partopsep=0pt}
+
+% --- Ordinals (\nth{9}) ---
+\usepackage{nth}
+
+% --- Icons (\faTrophy etc.) ---
+\usepackage{fontawesome5}
+
+% --- Spacing ---
+\usepackage{parskip}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{0pt}
+
+% --- Date ---
+\usepackage{datetime}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH], \THEYEAR}
+
+% --- Page style ---
+\pagestyle{plain}
+
+% ============================================================
+\begin{document}
+
+% --- Header ---
+\input{config/header_short}
+
+\medskip
+\hrule
+\medskip
+
+{\small
+
+% --- Employment ---
+\input{sections/employment}
+\medskip
+
+% --- Education ---
+\input{sections/education}
+\medskip
+
+% --- Teaching ---
+\input{sections/teaching}
+\medskip
+
+\pagebreak
+
+% --- Projects ---
+\input{sections/projects}
+\medskip
+
+% --- Institutional Responsibilities ---
+\input{sections/institutional}
+\medskip
+
+\pagebreak
+
+% --- Academic Duties / Membership ---
+\input{sections/membership}
+\medskip
+
+% --- Supervision (current) ---
+\input{sections/supervision}
+\medskip
+
+% --- Supervision (past) ---
+\input{sections/supervision_past}
+\medskip
+
+% --- Service (conf organisation + scientific societies) ---
+\input{sections/service}
+\medskip
+
+% --- Invited Talks (full) ---
+\input{sections/talks}
+\medskip
+
+% --- Awards ---
+\input{sections/awards}
+\medskip
+
+% --- Career Breaks ---
+\input{sections/careerbreaks}
+\medskip
+
+\pagebreak
+
+% --- Publications (full) ---
+\input{sections/publications}
+\medskip
+
+% --- References (commented out by default) ---
+%\input{sections/references}
+
+} % end \small
+
+\vfill
+{\footnotesize\textit{Last updated: \monthyeardate\today}}
+
+\end{document}

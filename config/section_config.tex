@@ -1,0 +1,54 @@
+% Define a macro to combine section number and title with background color
+\newcommand{\subsectionformat}[1]{%
+  \colorbox{LightBlue!40}{\parbox{\dimexpr\textwidth-2\fboxsep}{#1}}%
+}
+
+% Apply the macro in \titleformat without using # directly
+\titleformat{\subsection}[block]
+  {\bfseries} % Font style: bold italic
+  {} % Leave label empty in \titleformat
+  {-1pt}
+  {\subsectionformat} % Call the combined format with background
+\titlespacing*{\subsection}{0pt}{-1pt}{-1pt}
+
+% Define a macro to combine section number and title with background color
+% \newcommand{\sectionformat}[1]{%
+%   \colorbox{LightBlue!90}{\parbox{\dimexpr\textwidth-2\fboxsep}{\thesection\ #1}}%
+% }
+
+\newif\ifsectionnumbered
+\sectionnumberedtrue % default: show number
+
+\newcommand{\sectionformat}[1]{%
+  \colorbox{LightBlue!90}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep}{%
+      \ifsectionnumbered
+        \thesection\ #1%
+      \else
+        #1%
+      \fi
+    }%
+  }%
+}
+
+% Then define a clean unnumbered command:
+\newcommand{\unnumberedsection}[1]{%
+  \sectionnumberedfalse
+  \section*{#1}%
+  \sectionnumberedtrue
+}
+
+% Apply the macro in \titleformat without using # directly
+\titleformat{\section}[block]
+  {\bfseries} % Font style: bold italic
+  {} % Leave label empty in \titleformat
+  {0pt}
+  {\sectionformat} % Call the combined format with background
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+\newcommand{\unnumberedsection}[1]{%
+  \vspace{...}% match your spacing
+  {\bfseries\sectionformat{#1}}%
+  \addcontentsline{toc}{section}{#1}% optional: add to TOC
+}
+                  % Title format

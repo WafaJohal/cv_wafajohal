@@ -1,0 +1,97 @@
+% ============================================================
+% cv_1p.tex — 1-page CV
+% Uses mini variants only to target ~1 page.
+% Compile with: lualatex cv_1p.tex
+% (LuaLaTeX or XeLaTeX required for Carlito font)
+% ============================================================
+
+\documentclass[a4paper, 10pt]{article}
+
+% --- Geometry (tight margins for 1-page) ---
+\usepackage[a4paper, top=1.0cm, bottom=1.0cm, left=1.5cm, right=1.5cm]{geometry}
+
+% --- Font ---
+\usepackage{fontspec}
+\setmainfont{Carlito}
+
+% --- Colour ---
+\usepackage[x11names]{xcolor}
+
+% --- Section formatting ---
+\usepackage{titlesec}
+\input{config/section_config}
+
+% --- Tables ---
+\usepackage{tabularx}
+
+% --- Hyperlinks ---
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=black]{hyperref}
+
+% --- Lists ---
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=1pt, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=1pt, partopsep=0pt}
+
+% --- Ordinals ---
+\usepackage{nth}
+
+% --- Icons ---
+\usepackage{fontawesome5}
+
+% --- Spacing ---
+\usepackage{parskip}
+\setlength{\parskip}{1pt}
+\setlength{\parindent}{0pt}
+
+% --- Date ---
+\usepackage{datetime}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH], \THEYEAR}
+
+% --- Page style ---
+\pagestyle{empty}
+
+% ============================================================
+\begin{document}
+
+% --- Header ---
+\input{config/header_short}
+
+\smallskip
+\hrule
+\smallskip
+
+{\small
+
+% --- Employment (mini: top positions only) ---
+\input{sections/employment_mini}
+
+% --- Projects (mini: 4 entries) ---
+\input{sections/projects_mini}
+
+% --- Academic Duties (mini: 4 key entries) ---
+\input{sections/membership_mini}
+
+% --- Supervision (short: current students) ---
+\input{sections/supervision_short}
+
+% --- Awards (mini: top 6) ---
+\input{sections/awards_mini}
+
+% --- Selected Publications (mini: 5-6 entries) ---
+\input{sections/publications_mini}
+
+% --- Education (commented out — uncomment if space allows) ---
+%\input{sections/education}
+
+% --- Talks (commented out) ---
+%\input{sections/talks_short}
+
+% --- Career Breaks (commented out) ---
+%\input{sections/careerbreaks}
+
+% --- References (commented out) ---
+%\input{sections/references}
+
+} % end \small
+
+\end{document}

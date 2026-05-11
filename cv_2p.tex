@@ -1,0 +1,111 @@
+% ============================================================
+% cv_2p.tex — 2-page general CV
+% Uses short/mini variants to target ~2 pages.
+% Compile with: lualatex cv_2p.tex
+% (LuaLaTeX or XeLaTeX required for Carlito font)
+% ============================================================
+
+\documentclass[a4paper, 10pt]{article}
+
+% --- Geometry ---
+\usepackage[a4paper, top=1.2cm, bottom=1.2cm, left=1.8cm, right=1.8cm]{geometry}
+
+% --- Font ---
+\usepackage{fontspec}
+\setmainfont{Carlito}
+
+% --- Colour ---
+\usepackage[x11names]{xcolor}
+
+% --- Section formatting ---
+\usepackage{titlesec}
+\input{config/section_config}
+
+% --- Tables ---
+\usepackage{tabularx}
+
+% --- Hyperlinks ---
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=black]{hyperref}
+
+% --- Lists ---
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=2pt, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=2pt, partopsep=0pt}
+
+% --- Ordinals ---
+\usepackage{nth}
+
+% --- Icons ---
+\usepackage{fontawesome5}
+
+% --- Spacing ---
+\usepackage{parskip}
+\setlength{\parskip}{2pt}
+\setlength{\parindent}{0pt}
+
+% --- Date ---
+\usepackage{datetime}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH], \THEYEAR}
+
+% --- Page style ---
+\pagestyle{plain}
+
+% ============================================================
+\begin{document}
+
+% --- Header ---
+\input{config/header_short}
+
+\medskip
+\hrule
+\smallskip
+
+{\small
+
+% --- Employment (mini: all 5 positions condensed) ---
+\input{sections/employment_mini}
+\smallskip
+
+% --- Education ---
+\input{sections/education}
+\smallskip
+
+% --- Projects (short: 7 entries) ---
+\input{sections/projects_short}
+\smallskip
+
+% --- Academic Duties (short) ---
+\input{sections/membership_short}
+\smallskip
+
+% --- Supervision (short: current students, max 6+) ---
+\input{sections/supervision_short}
+\smallskip
+
+% --- Invited Talks (short: 10 entries) ---
+\input{sections/talks_short}
+\smallskip
+
+% --- Awards (full) ---
+\input{sections/awards}
+\smallskip
+
+% --- Selected Publications (mini: 5 entries) ---
+\input{sections/publications_mini}
+\smallskip
+
+% --- Career Breaks (commented out; uncomment if needed) ---
+%\input{sections/careerbreaks}
+
+% --- Institutional Responsibilities (commented out) ---
+%\input{sections/institutional}
+
+% --- Service (commented out) ---
+%\input{sections/service}
+
+% --- References (commented out) ---
+%\input{sections/references}
+
+} % end \small
+
+\end{document}
