@@ -1,0 +1,61 @@
+% ============================================================
+% PUBLICATIONS — full biblatex version
+% Requires \input{config/bib_config} in the driver file preamble.
+% Compile: lualatex → bibtex → lualatex → lualatex
+%
+% Section order:
+%   1. Journal articles          type=article
+%   2. International conferences type=inproceedings, notkeyword=french
+%   3. Book chapters             type=incollection
+%   4. French conferences        type=inproceedings, keyword=french
+%   5. Patents                   keyword=patent  (@misc with keywords={patent})
+%   6. Other contributions       type=misc, notkeyword=patent
+%   7. Theses                    type=thesis  (catches @phdthesis + @mastersthesis)
+% ============================================================
+\nocite{*}
+% ---- Peer-reviewed Journal Publications ----
+\subsection{PEER-REVIEWED SCIENTIFIC JOURNAL PUBLICATIONS}
+\vspace{2pt}
+\printbibliography[type=article, heading=none]
+
+\vspace{0.1in}
+
+% ---- Peer-reviewed International Conference Publications ----
+\subsection{PEER-REVIEWED INTERNATIONAL CONFERENCE PUBLICATIONS}
+\vspace{2pt}
+\printbibliography[type=inproceedings, notkeyword=french, heading=none]
+
+\vspace{0.1in}
+
+% ---- Book Chapters ----
+\subsection{BOOK CHAPTERS}
+\vspace{2pt}
+\printbibliography[type=incollection, heading=none]
+
+\vspace{0.1in}
+
+% ---- Peer-reviewed French Conference Publications ----
+\subsection{PEER-REVIEWED FRENCH CONFERENCE PUBLICATIONS}
+\vspace{2pt}
+\printbibliography[type=inproceedings, keyword=french, heading=none]
+
+\vspace{0.1in}
+
+% ---- International Patents ----
+\subsection{INTERNATIONAL PATENTS}
+\vspace{2pt}
+\printbibliography[keyword=patent, heading=none]
+
+\vspace{0.1in}
+
+% ---- Other Contributions ----
+\subsection{OTHER CONTRIBUTIONS}
+\vspace{2pt}
+\printbibliography[type=misc, notkeyword=patent, heading=none]
+
+\vspace{0.1in}
+
+% ---- Thesis ----
+\subsection{THESIS}
+\vspace{2pt}
+\printbibliography[type=thesis, heading=none]

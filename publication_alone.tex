@@ -1,0 +1,116 @@
+\documentclass[a4paper, 11pt]{article}
+
+ % --- Geometry ---
+\usepackage[a4paper, top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
+
+% --- Colour (x11names provides LightBlue used in section_config) ---
+\usepackage[x11names]{xcolor}
+
+% --- Section formatting (loads subsection/section macros) ---
+\usepackage{titlesec}
+\input{config/section_config}
+
+% --- Tables ---
+\usepackage{tabularx}
+ \usepackage{longtable} 
+% --- Hyperlinks ---
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+    colorlinks=true,       % Enable colored text instead of boxes
+    linkcolor=DarkerBlue,        % Color for internal links
+    citecolor=DarkerBlue,        % Color for citations
+    filecolor=DarkerBlue,        % Color for file links
+    urlcolor=DarkerBlue          % Color for external URLs
+}
+% --- Lists ---
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=1pt, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=3pt, partopsep=0pt}
+
+% --- Ordinals (\nth{9}) ---
+\usepackage{nth}
+
+% --- Icons (\faTrophy etc.) ---
+\usepackage{fontawesome5}
+
+
+% --- Page style ---
+\pagestyle{plain}
+
+% --- Biblatex (bold "Johal, Wafa"; loads bib/references.bib) ---
+\input{bib_config}
+
+\usepackage{titlesec}
+% ============================================================
+\begin{document}
+
+
+\input{config/section_config}
+
+
+
+% ============================================================
+% PUBLICATIONS — full biblatex version
+% Requires \input{config/bib_config} in the driver file preamble.
+% Compile: lualatex → bibtex → lualatex → lualatex
+%
+% Section order:
+%   1. Journal articles          type=article
+%   2. International conferences type=inproceedings, notkeyword=french
+%   3. Book chapters             type=incollection
+%   4. French conferences        type=inproceedings, keyword=french
+%   5. Patents                   keyword=patent  (@misc with keywords={patent})
+%   6. Other contributions       type=misc, notkeyword=patent
+%   7. Theses                    type=thesis  (catches @phdthesis + @mastersthesis)
+% ============================================================
+\nocite{*}
+% ---- Peer-reviewed Journal Publications ----
+\subsection{PEER-REVIEWED SCIENTIFIC JOURNAL PUBLICATIONS}
+\vspace{2pt}
+\printbibliography[type=article, heading=none]
+
+\vspace{0.1in}
+
+% ---- Peer-reviewed International Conference Publications ----
+\subsection{PEER-REVIEWED INTERNATIONAL CONFERENCE PUBLICATIONS}
+\vspace{2pt}
+\printbibliography[type=inproceedings, notkeyword=french, heading=none]
+
+\vspace{0.1in}
+
+
+% ---- Book Chapters ----
+\subsection{BOOK CHAPTERS}
+\vspace{2pt}
+\printbibliography[type=incollection, heading=none]
+
+\vspace{0.1in}
+
+% ---- Peer-reviewed French Conference Publications ----
+\subsection{PEER-REVIEWED FRENCH CONFERENCE PUBLICATIONS}
+\vspace{2pt}
+\printbibliography[type=inproceedings, keyword=french, heading=none]
+
+\vspace{0.1in}
+
+% ---- International Patents ----
+\subsection{INTERNATIONAL PATENTS}
+\vspace{2pt}
+\printbibliography[keyword=patent, heading=none]
+
+\vspace{0.1in}
+
+% ---- Other Contributions ----
+\subsection{OTHER CONTRIBUTIONS}
+\vspace{2pt}
+\printbibliography[type=misc, notkeyword=patent, heading=none]
+
+\vspace{0.1in}
+
+% ---- Thesis ----
+\subsection{THESIS}
+\vspace{2pt}
+\printbibliography[type=thesis, heading=none]
+
+\end{document}
