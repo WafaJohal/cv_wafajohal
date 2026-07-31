@@ -1,0 +1,190 @@
+% ============================================================
+% cv_sarah_1p.tex — 1-page grant CV for Sarah Schömbs
+% Style: matches WafaJohal/cv_wafajohal template
+% Compile with: lualatex cv_sarah_1p.tex
+% (LuaLaTeX or XeLaTeX required for Carlito font)
+% ============================================================
+\documentclass[a4paper, 11pt]{article}
+
+% --- Geometry (tight margins for 1-page) ---
+\usepackage[a4paper, top=1.0cm, bottom=1.0cm, left=1.5cm, right=1.5cm]{geometry}
+
+% --- Font ---
+\usepackage{fontspec}
+\setmainfont{Carlito}
+
+% --- Colour ---
+\usepackage[x11names]{xcolor}
+\definecolor{LightGray}{RGB}{230,232,235}
+\definecolor{LightBlue}{RGB}{214,232,253}
+\definecolor{DarkerBlue}{RGB}{50,60,115}
+
+% --- Section formatting ---
+\usepackage{titlesec}
+
+\newcommand{\subsectionformat}[1]{%
+  \colorbox{LightBlue!100}{\parbox{\dimexpr\textwidth-2\fboxsep}{#1}}%
+}
+\titleformat{\subsection}[block]
+  {\bfseries}
+  {}
+  {-1pt}
+  {\subsectionformat}
+\titlespacing*{\subsection}{0pt}{-1pt}{-1pt}
+
+% --- Tables ---
+\usepackage{tabularx}
+
+% --- Hyperlinks ---
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=DarkerBlue,
+    citecolor=DarkerBlue,
+    filecolor=DarkerBlue,
+    urlcolor=DarkerBlue
+}
+
+% --- Lists ---
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=1pt, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=1pt, partopsep=0pt}
+
+% --- Ordinals ---
+\usepackage{nth}
+
+% --- Icons ---
+\usepackage{fontawesome5}
+
+% --- Spacing ---
+\usepackage{parskip}
+\setlength{\parskip}{1pt}
+\setlength{\parindent}{0pt}
+
+% --- Page style ---
+\pagestyle{empty}
+
+% ============================================================
+\begin{document}
+
+% --- Header ---
+\begin{center}
+  {\Large\textbf{Sarah Schömbs}}\\[2pt]
+  PhD Candidate \& incoming Research Fellow, Human-Computer Interaction \\
+  School of Computing and Information Systems, University of Melbourne\\[2pt]
+  \href{mailto:s.schombs@unimelb.edu.au}{s.schombs@unimelb.edu.au}
+  \;|\;
+  \href{https://scholar.google.com.au/citations?user=0h3pDqgAAAAJ&hl=en}{Google Scholar}
+  \;|\;
+  \href{https://www.linkedin.com/in/sarah-schoembs}{LinkedIn}
+  \;|\;
+  \href{https://sites.google.com/view/sarahschombs/}{sites.google.com/view/sarahschombs}
+\end{center}
+
+\smallskip
+\hrule
+\smallskip
+
+{\small
+
+% --- Education ---
+\subsection{EDUCATION}
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+2023--2026 & \textbf{PhD, Engineering and Information Technology}, University of Melbourne \\
+           & \textit{Designing and Understanding Risk Communication in Human-AI Interaction} \\
+           & Supervisors: A/Prof Wafa Johal \& A/Prof Jorge Goncalves \\[3pt]
+2019--2022 & \textbf{M.S. Human Factors} (H1; 90\%), Technical University of Berlin, Germany \\
+           & Focus: Human-Robot Interaction and Automation Psychology \\[3pt]
+2013--2017 & \textbf{B.S. Industrial Engineering} (H1; 85\%), Technical University of Berlin, Germany \\
+           & Exchange semester: Université Paris Dauphine--PSL, France (EU Erasmus+ Scholarship) \\
+\end{tabularx}
+
+\smallskip
+
+% --- Employment ---
+\subsection{EMPLOYMENT}
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+2026--     & \textbf{Research Fellow}, CHRI Lab, School of Computing and Information Systems, University of Melbourne \\[2pt]
+2022       & \textbf{Project Consultant, Data Science \& IoT}, 50Hertz Transmission, Germany \\
+           & AI Centre of Excellence: mobile robots for autonomous offshore inspection and predictive maintenance \\[2pt]
+2019--2022 & \textbf{UX Designer}, ZENSPOTTING (health \& well-being startup) \\
+           & Conceptual UX design and user testing for B2C platform features \\
+\end{tabularx}
+
+\smallskip
+
+% --- Selected Publications ---
+\subsection{SELECTED PUBLICATIONS}
+\vspace{2pt}
+
+\begin{itemize}[nosep]
+
+  \item \textbf{Schömbs, S.}, Zhang, Y., Goncalves, J., \& Johal, W. (2026). One Body, Many Minds: Exploring Design Frictions and Considerations for Multi-Agentic Systems in Human-Robot Interaction. \textit{CHI EA'26}.
+
+  \item \textbf{Schömbs, S.}, Zhang, Y., Goncalves, J., \& Johal, W. (2025). From Conversation to Orchestration: HCI Challenges and Opportunities in Interactive Multi-Agentic Systems. \textit{HAI'25}.
+
+  \item \textbf{Schömbs, S.}, Goncalves, J., \& Johal, W. (2025). ``I can feel the risks by looking at the robot face'': Communicating Risk through an Embodied Social Agent. \textit{DIS'25}.
+
+  \item \textbf{Schömbs, S.}, Pareek, S., Goncalves, J., \& Johal, W. (2024). Robot-Assisted Decision-Making: Unveiling the Role of Uncertainty Visualisation and Embodiment. \textit{CHI'24}.
+
+  \item \textbf{Schömbs, S.}, Klein, J., \& Roesler, E. (2023). Feeling with a robot --- the role of anthropomorphism by design and the tendency to anthropomorphize in HRI. \textit{Frontiers in Robotics and AI}. \textit{(Selected as best article in Frontiers Robotics \& AI 2023; IF 3.4)}
+
+  \item Leusmann, J., \textbf{Schömbs, S.}, Diedrich, M., \& Müller, F. (2026). If It's Safe, Don't Ask: Decreasing Frustration through User Involvement for Risky Robot Behaviors. \textit{HRI'26}. \faMedal~\textit{Honourable Mention}
+
+  \item Balaska, A., Grønbæk, J.E., Zhang, S., \textbf{Schömbs, S.}, \& Johal, W. (2026). Investigating Social Robot Proxies to Support Situationally Impaired Users in Hybrid Meetings. \textit{Augmented Humans (AH'26)}.
+
+\end{itemize}
+
+\smallskip
+
+% --- Academic Duties ---
+\subsection{ACADEMIC DUTIES \& SERVICE}
+\vspace{2pt}
+
+\begin{itemize}
+  \item \textbf{Doctoral Consortia}: CHI 2025 (in-person); HRI 2025 Pioneers (in-person)
+  \item \textbf{Sustainability Chair}, ACM/IEEE International Conference on Human-Robot Interaction (HRI'25); secured SIGCHI Development Fund; led sustainability action initiatives
+  \item \textbf{Associate Chair}, CHI 2025 Late-Breaking Work Program Committee
+  \item \textbf{Workshop Co-Organiser}: MAgicS-HRI@HRI'26; CURE@IUI'26; ROOTS-HRI@HRI'26; Sustainability-4-HRI@HRI'25
+  \item \textbf{Reviewer}: CHI, HRI, THRI, HAI, RO-MAN, AlpCHI
+\end{itemize}
+
+\smallskip
+
+% --- Teaching & Supervision ---
+\subsection{TEACHING \& SUPERVISION}
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+2026--     & \textbf{Head Tutor}, INFO90005: Human-AI Interaction, University of Melbourne \\[2pt]
+2025       & \textbf{Academic Tutor}, INFO30005: Advanced Interface Prototyping, University of Melbourne \\[2pt]
+2024--2025 & \textbf{Research Assistant}, HCI Group, University of Melbourne (sustainability in IT/IS) \\[2pt]
+2024--2026 & \textbf{Master's Thesis Supervision}: 6 students at UniMelb (2 year-long, 4 semester-long) \\
+           & Topics: AI transparency, autonomous social surrogates, risk communication, HRI trust \\
+\end{tabularx}
+
+\smallskip
+
+% --- Awards & Scholarships ---
+\subsection{AWARDS \& SCHOLARSHIPS}
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+2024 & Diane Lemaire Scholarship (5,000 AUD) --- outstanding female PhD student, Faculty of Engineering \& IT, University of Melbourne \\[2pt]
+2024 & \textbf{Winning Team Lead}, Robot Competition, ACM/IEEE Human-Robot Interaction (HRI'24) \\[2pt]
+2024 & Google Conference Scholarship -- APAC (2,800 AUD), awarded for first-author paper at top-tier venue \\[2pt]
+2023 & Rowden White Scholarship (6,500 AUD), University of Melbourne, academic excellence \& research potential \\[2pt]
+2022 & Melbourne Research Scholarship, University of Melbourne \\
+\end{tabularx}
+
+} % end \small
+
+\end{document}

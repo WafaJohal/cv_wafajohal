@@ -1,0 +1,186 @@
+% ============================================================
+% cv_tejas_1p.tex — 1-page grant CV for Tejas Umesh
+% Style: matches WafaJohal/cv_wafajohal template
+% Compile with: lualatex cv_tejas_1p.tex
+% (LuaLaTeX or XeLaTeX required for Carlito font)
+% ============================================================
+\documentclass[a4paper, 11pt]{article}
+
+% --- Geometry (tight margins for 1-page) ---
+\usepackage[a4paper, top=1.0cm, bottom=1.0cm, left=1.5cm, right=1.5cm]{geometry}
+
+% --- Font ---
+\usepackage{fontspec}
+\setmainfont{Carlito}
+
+% --- Colour ---
+\usepackage[x11names]{xcolor}
+\definecolor{LightGray}{RGB}{230,232,235}
+\definecolor{LightBlue}{RGB}{214,232,253}
+\definecolor{DarkerBlue}{RGB}{50,60,115}
+
+% --- Section formatting ---
+\usepackage{titlesec}
+
+\newcommand{\subsectionformat}[1]{%
+  \colorbox{LightBlue!100}{\parbox{\dimexpr\textwidth-2\fboxsep}{#1}}%
+}
+\titleformat{\subsection}[block]
+  {\bfseries}
+  {}
+  {-1pt}
+  {\subsectionformat}
+\titlespacing*{\subsection}{0pt}{-1pt}{-1pt}
+
+% --- Tables ---
+\usepackage{tabularx}
+
+% --- Hyperlinks ---
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=DarkerBlue,
+    citecolor=DarkerBlue,
+    filecolor=DarkerBlue,
+    urlcolor=DarkerBlue
+}
+
+% --- Lists ---
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=1pt, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=1pt, partopsep=0pt}
+
+% --- Ordinals ---
+\usepackage{nth}
+
+% --- Icons ---
+\usepackage{fontawesome5}
+
+% --- Spacing ---
+\usepackage{parskip}
+\setlength{\parskip}{1pt}
+\setlength{\parindent}{0pt}
+
+% --- Page style ---
+\pagestyle{empty}
+
+% ============================================================
+\begin{document}
+
+% --- Header ---
+\begin{center}
+  {\Large\textbf{Tejas Umesh}}\\[2pt]
+  PhD Candidate, Human-Robot Interaction \\
+  School of Computing and Information Systems, University of Melbourne\\[2pt]
+  \href{mailto:tumesh@student.unimelb.edu.au}{tumesh@student.unimelb.edu.au}
+  \;|\;
+  \href{https://scholar.google.fr/citations?user=kW4x2ZUAAAAJ}{Google Scholar}
+  \;|\;
+  \href{https://www.linkedin.com/in/tejas-umesh}{LinkedIn}
+\end{center}
+
+\smallskip
+\hrule
+\smallskip
+
+{\small
+
+% --- Education ---
+\subsection{EDUCATION}
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+2026--     & \textbf{PhD, Human-Computer Interaction}, University of Melbourne (incoming, June 2026) \\
+           & Supervisor: A/Prof Wafa Johal, CHRI Lab \\[3pt]
+2022--2024 & \textbf{M.S. Computer Engineering} (GPA 4.00/4.00), Arizona State University, USA \\
+           & Thesis (Dr Hasti Seifi): \textit{Building and Evaluating a Skin-Like Sensor for Social Touch Gesture Classification} \\
+           & Awarded the Engineering Graduate Fellowship \\[3pt]
+2015--2019 & \textbf{B.Tech Electronics \& Communication}, Manipal Institute of Technology, India \\
+\end{tabularx}
+
+\smallskip
+
+% --- Employment / Research Experience ---
+\subsection{RESEARCH EXPERIENCE}
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+2024--2026     & \textbf{Senior Research Associate}, Barrow Neurological Institute (Dignity Health), USA \\
+           & End-to-end patient-data pipelines (storage, cleaning, processing, maintenance); analysis of epileptic brain activity under emotional stimuli to personalise treatment and mitigate symptoms \\[2pt]
+2022--2024 & \textbf{Data Scientist}, Decision Theater, Arizona State University, USA \\
+           & LSTM time-series forecasting of Valley Fever from weather data (low MSE, prediction windows up to 30 days); labour-force analytics in Tableau, Python, SQL; automated RIS conversion for bibliographic storage \\[2pt]
+2023       & \textbf{Research Intern}, Summer Research Initiative, ASU (Dr Giulia Pedrielli) \\
+           & Modular digital simulation for optical reticle management at Intel; 33\% reduction in execution time over the existing codebase \\[2pt]
+2020--2021 & \textbf{Research Scientist}, Robert Bosch Centre for Data Science \& AI, IIT Madras, India (Prof. B.\ Ravindran) \\
+           & Led a team of four building a lung-tumour detection system (OpenCV, SVM) at 83\% accuracy; random-forest feature analysis to identify top-10\% tumour-aggression features, deployed as a screening tool at Apollo Hospitals \\[2pt]
+2019--2020 & \textbf{Research Engineer}, Indian Institute of Science, India (Dr P.\ K.\ Ghosh) \\
+           & BLSTM speech-to-EMG mapping (76\% accuracy); pitch-trend prediction for VCV utterances (71\%, CNN \& Random Forest); built an acoustic-articulatory dataset for speaker recognition and speech synthesis \\[2pt]
+2017, 2018 & \textbf{Research Engineer Intern}, University of Bremen, Germany (Prof.\ Tanja Schultz) \\
+           & Deep neural networks for fundamental-frequency generation in EMG-to-speech conversion; improved on the baseline to 77\% accuracy, aiding voice-restoration devices \\
+\end{tabularx}
+
+\smallskip
+
+% --- Publications ---
+\subsection{PUBLICATIONS}
+\vspace{2pt}
+
+\begin{itemize}[nosep]
+  \item \textbf{T.\ Umesh}, Y.\ Shetty, \& H.\ Seifi. (2025). Evaluating Social Touch Gesture Recognition with a Skin-Like Soft Sensor. \textit{IEEE/ACM International Conference on Human-Robot Interaction (HRI'25)}, Melbourne, Australia.
+  \item X.\ Jin, F.\ Wei, S.\ Kandala, \textbf{T.\ Umesh}, et al. (2025). Time series forecasting of Valley Fever infection in Maricopa County, AZ using LSTM. \textit{The Lancet Regional Health -- Americas}, 43.
+  \item M.\ Sharma, N.\ Gaddam, \textbf{T.\ Umesh}, A.\ Murthy, \& P.\ Ghosh. (2021). A Comparative Study of Different EMG Features for Acoustics-to-EMG Mapping. \textit{Proc.\ Interspeech 2021}, Brno, Czech Republic, 616--620.
+  \item T.\ Purohit, \textbf{T.\ Umesh}, S.\ Narayanan, M.\ S, \& P.\ K.\ Ghosh. (2021). SPIRE VCV: An Acoustic-Articulatory Corpus with Three Different Speaking Rates. \textit{24th O-COCOSDA}, Singapore, 116--121.
+  \item L.\ Diener, \textbf{T.\ Umesh}, \& T.\ Schultz. (2019). Improving Fundamental Frequency Generation in EMG-to-Speech Conversion Using a Quantization Approach. \textit{IEEE ASRU 2019}, Singapore, 682--689.
+\end{itemize}
+
+\smallskip
+
+% --- Posters ---
+\subsection{SELECTED POSTERS}
+\vspace{2pt}
+
+\begin{itemize}[nosep]
+  \item \textbf{T.\ Umesh}, A.\ Kori, P.\ Philip, A.\ Shinto, \& B.\ Ravindran. (2021). Analysis of Radiomic Features in Correlation with Tumour Aggression in Lung PET-CT Scans. \textit{RBCDSAI Annual Research Showcase}, India. \faMedal~\textit{2nd Runner-up, Best Poster Award}
+\end{itemize}
+
+\smallskip
+
+% --- Academic Projects ---
+\subsection{ACADEMIC PROJECTS}
+\vspace{2pt}
+
+\begin{itemize}[nosep]
+  \item \textbf{Polyp Classification \& Detection in Colonoscopies} (2022) --- ResNet-50, MobileNetV2, EfficientNetB7; AUROC 0.997 with EfficientNetB7 (TensorFlow, OpenCV).
+  \item \textbf{Covid19AID: COVID-19 Detection from Chest X-Ray} (2022) --- Stanford CheXnet (DenseNet121) on combined open datasets; AUROC 0.988 (PyTorch).
+\end{itemize}
+
+\smallskip
+
+% --- Technical Skills ---
+\subsection{TECHNICAL SKILLS}
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+Programming & Python, SQL, MATLAB, C++, R, Tableau \\[2pt]
+Libraries   & TensorFlow, Keras, PyTorch, scikit-learn, Pandas, OpenCV, NumPy, SciPy, AWS \\[2pt]
+Methods     & Machine Learning, Deep Learning, Data Science, Inferential Statistics, Data Analysis \\
+\end{tabularx}
+
+\smallskip
+
+% --- Leadership & Civic Involvement ---
+\subsection{LEADERSHIP \& CIVIC INVOLVEMENT}
+\vspace{2pt}
+
+\begin{itemize}[nosep]
+  \item \textbf{Editor in Chief}, IE-E\&C (Manipal Chapter), India --- led a team of 5 writers producing a bi-annual newsletter on developments in AI and technology.
+  \item \textbf{Student Volunteer}, Interspeech --- supported attendees at the world's largest spoken-language-processing conference.
+  \item \textbf{Volunteer}, ISSC, Arizona State University --- organised events to support and build community for new international students.
+\end{itemize}
+
+} % end \small
+
+\end{document}
